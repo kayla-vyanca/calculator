@@ -1,0 +1,75 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(238, 130, 238, 1) 7%, rgba(0, 209, 255, 1) 100%);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid black;
+    outline: none;
+    background-color: rgb(255, 255, 255, .90);
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .50);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .90);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}
+
+@media screen and (max-width: 425px) {
+    .calculator-grid {
+        align-content: center;
+        box-sizing: border-box;
+        display: grid;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 400;
+        grid-template-columns: 100px 100px 100px 100px;
+        grid-template-rows: 120px 100px 100px 100px 100px 100px;
+        height: 896px;
+        justify-content: center;
+        min-height: 500px;
+        width: 414px;
+        background: radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 1) 15%, rgba(0, 188, 212, 1) 50%, rgba(238, 130, 238, 1) 100%);
+    }
+}
